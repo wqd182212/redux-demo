@@ -1,4 +1,4 @@
-import { HANDLE_CHANGE, HANDLE_ADD, HANDLE_DELETE } from './action'
+import { HANDLE_CHANGE, HANDLE_ADD, HANDLE_DELETE } from './action';
 
 const defaultState = {
     inputValue: '',

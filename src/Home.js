@@ -2,33 +2,21 @@ import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import { Input, Button, List } from 'antd';
 import store from './store/index';
-import { HANDLE_CHANGE, HANDLE_ADD, HANDLE_DELETE } from './store/action'
+import { handleChangeAction, handleAddAction, handleDeleteAction } from './store/createAction';
 
 function Home() {
     const [state, setState] = useState(store.getState());
 
     const changeInput = (e) => {
-        const action = {
-            type: HANDLE_CHANGE,
-            value: e.target.value
-        };
-        store.dispatch(action);
+        store.dispatch(handleChangeAction(e.target.value));
     }
 
     const addItem = () => {
-        const action = {
-            type: HANDLE_ADD,
-            value: state.inputValue
-        };
-        store.dispatch(action);
+        store.dispatch(handleAddAction(state.inputValue));
     }
 
     const deleteItem = (index) => {
-        const action = {
-            type: HANDLE_DELETE,
-            value: index
-        };
-        store.dispatch(action);
+        store.dispatch(handleDeleteAction(index));
     }
 
     const storeChange = () => {
