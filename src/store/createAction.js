@@ -1,4 +1,4 @@
-import { HANDLE_CHANGE, HANDLE_ADD, HANDLE_DELETE } from './action';
+import { HANDLE_CHANGE, HANDLE_ADD, HANDLE_DELETE, GET_LIST } from './action';
 
 export const handleChangeAction = (value) => ({
     type: HANDLE_CHANGE,
@@ -12,5 +12,10 @@ export const handleAddAction = (value) => ({
 
 export const handleDeleteAction = (value) => ({
     type: HANDLE_DELETE,
+    value,
+});
+
+export const getListAction = (value) => ({
+    type: GET_LIST,
     value,
 });

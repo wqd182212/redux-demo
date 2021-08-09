@@ -1,4 +1,4 @@
-import { HANDLE_CHANGE, HANDLE_ADD, HANDLE_DELETE } from './action';
+import { HANDLE_CHANGE, HANDLE_ADD, HANDLE_DELETE, GET_LIST } from './action';
 
 const defaultState = {
     inputValue: '',
@@ -19,6 +19,10 @@ const reducer = (state = defaultState, action) => {
     }
     if (action.type === HANDLE_DELETE) {
         newState.list.splice(action.value, 1);
+        return newState;
+    }
+    if (action.type === GET_LIST) {
+        newState.list = action.value;
         return newState;
     }
     return state;
